@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QR PASS - Digital Payment Solutions for Societies & Businesses</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="QR PASS offers seamless digital payment solutions for society maintenance, school fees, event ticketing, and business transactions across India.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #4361ee;
+      --primary-dark: #3a56d4;
+      --secondary: #3f37c9;
+      --accent: #4895ef;
+      --light: #f8f9fa;
+      --dark: #212529;
+      --success: #4cc9f0;
+      --white: #ffffff;
+      --gray: #6c757d;
+      --light-gray: #e9ecef;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+      --border-radius: 12px;
+      --section-padding: 80px 20px;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--white);
+      padding: 20px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .header-content h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      animation: fadeInDown 1s ease;
+    }
+    
+    .header-content p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin-bottom: 30px;
+      animation: fadeInUp 1s ease;
+    }
+    
+    .header-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+      opacity: 0.1;
+    }
+    
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+    
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo i {
+      margin-right: 10px;
+      color: var(--success);
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+    
+    .nav-links li {
+      margin-left: 30px;
+    }
+    
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+    }
+    
+    .nav-links a:hover {
+      color: var(--success);
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--success);
+      transition: var(--transition);
+    }
+    
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    
+    /* Hero CTA */
+    .cta-buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+      text-align: center;
+    }
+    
+    .btn-primary {
+      background-color: var(--white);
+      color: var(--primary);
+      box-shadow: var(--shadow);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--white);
+      border: 2px solid var(--white);
+    }
+    
+    .btn-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Sections */
+    section {
+      padding: var(--section-padding);
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .section-title h2 {
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      border-radius: 2px;
+    }
+    
+    .section-title p {
+      color: var(--gray);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    /* Features */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+    
+    .feature-card {
+      background-color: var(--white);
+      border-radius: var(--border-radius);
+      padding: 30px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      text-align: center;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .feature-icon {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    
+    .feature-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      color: var(--primary-dark);
+    }
+    
+    /* How It Works */
+    .steps {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-top: 50px;
+      position: relative;
+    }
+    
+    .step {
+      flex: 0 0 calc(33.333% - 30px);
+      text-align: center;
+      position: relative;
+      padding: 0 15px;
+    }
+    
+    .step-number {
+      width: 60px;
+      height: 60px;
+      background-color: var(--primary);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0 auto 20px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .step-content {
+      background-color: var(--white);
+      padding: 30px 20px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    
+    .step-content:hover {
+      transform: translateY(-5px);
+    }
+    
+    .step-content h3 {
+      margin-bottom: 15px;
+      color: var(--primary-dark);
+    }
+    
+    /* Testimonials */
+    .testimonials {
+      background-color: var(--primary);
+      color: var(--white);
+      padding: 80px 0;
+      position: relative;
+    }
+    
+    .testimonials::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+      opacity: 0.1;
+    }
+    
+    .testimonial-slider {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .testimonial {
+      text-align: center;
+      padding: 0 20px;
+    }
+    
+    .testimonial-text {
+      font-size: 1.2rem;
+      font-style: italic;
+      margin-bottom: 30px;
+      position: relative;
+    }
+    
+    .testimonial-text::before,
+    .testimonial-text::after {
+      content: '"';
+      font-size: 3rem;
+      color: rgba(255, 255, 255, 0.2);
+      position: absolute;
+    }
+    
+    .testimonial-text::before {
+      top: -20px;
+      left: -10px;
+    }
+    
+    .testimonial-text::after {
+      bottom: -40px;
+      right: -10px;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .author-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 15px;
+      border: 3px solid var(--white);
+    }
+    
+    .author-info h4 {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    
+    .author-info p {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    
+    /* Contact */
+    .contact-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-top: 50px;
+    }
+    
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+    }
+    
+    .contact-icon {
+      font-size: 1.5rem;
+      color: var(--accent);
+      margin-top: 3px;
+    }
+    
+    .contact-details h3 {
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+    }
+    
+    .contact-details a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .contact-details a:hover {
+      color: var(--accent);
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--dark);
+      color: var(--light-gray);
+      padding: 60px 0 20px;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-column h3 {
+      color: var(--white);
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background-color: var(--accent);
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+      color: var(--light-gray);
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-block;
+    }
+    
+    .footer-links a:hover {
+      color: var(--accent);
+      transform: translateX(5px);
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      transition: var(--transition);
+    }
+    
+    .social-links a:hover {
+      background-color: var(--accent);
+      transform: translateY(-3px);
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
+    }
+    
+    /* WhatsApp Float */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #25D366;
+      color: var(--white);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      animation: pulse 2s infinite;
+    }
+    
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Animations */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
+    
+    /* Responsive */
+    @media (max-width: 992px) {
+      .step {
+        flex: 0 0 calc(50% - 20px);
+        margin-bottom: 40px;
+      }
+      
+      .step:last-child {
+        margin-bottom: 0;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .header-content h1 {
+        font-size: 2.2rem;
+      }
+      
+      .section-title h2 {
+        font-size: 1.8rem;
+      }
+      
+      .step {
+        flex: 0 0 100%;
+      }
+      
+      .testimonial-text {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="container">
+    <nav>
+      <a href="#" class="logo">
+        <i class="fas fa-qrcode"></i> QR PASS
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    
+    <div class="header-content">
+      <h1>Digital Payment Solutions Made Simple</h1>
+      <p>QR PASS revolutionizes payments for housing societies, schools, events, and businesses with seamless digital transactions and automated record-keeping.</p>
+      <div class="cta-buttons">
+        <a href="#contact" class="btn btn-primary">Get Started</a>
+        <a href="https://wa.me/919158058999" target="_blank" class="btn btn-secondary">Talk to Us</a>
+      </div>
+    </div>
+    
+    <div class="header-bg"></div>
+  </div>
+</header>
+
+<!-- Features Section -->
+<section id="features" class="container">
+  <div class="section-title">
+    <h2>Our Services</h2>
+    <p>Comprehensive digital payment solutions tailored for your specific needs</p>
+  </div>
+  
+  <div class="features">
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-building"></i>
+      </div>
+      <h3>Society Maintenance</h3>
+      <p>Automate maintenance fee collections with instant receipts and transparent records for housing societies and apartments.</p>
+    </div>
+    
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-school"></i>
+      </div>
+      <h3>School Fee Payments</h3>
+      <p>Streamline fee collection for educational institutions with secure online payments and automated reconciliation.</p>
+    </div>
+    
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-ticket-alt"></i>
+      </div>
+      <h3>Event Ticketing</h3>
+      <p>Create and manage digital tickets for conferences, shows, and events with QR code validation.</p>
+    </div>
+    
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-hotel"></i>
+      </div>
+      <h3>Hotel & Facility Booking</h3>
+      <p>Simplify bookings and payments for hotels, play areas, and market stalls with our integrated system.</p>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works Section -->
+<section id="how-it-works" class="container">
+  <div class="section-title">
+    <h2>How QR PASS Works</h2>
+    <p>Three simple steps to transform your payment collection process</p>
+  </div>
+  
+  <div class="steps">
+    <div class="step">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <h3>Create Your Payment Link</h3>
+        <p>Set up your customized payment link or QR code in minutes through our intuitive dashboard.</p>
+      </div>
+    </div>
+    
+    <div class="step">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <h3>Share with Customers</h3>
+        <p>Distribute via WhatsApp, email, or display QR codes at your premises for easy access.</p>
+      </div>
+    </div>
+    
+    <div class="step">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <h3>Receive & Manage Payments</h3>
+        <p>Get instant notifications and automated record updates in your dashboard as payments come in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials">
+  <div class="container">
+    <div class="section-title">
+      <h2 style="color: var(--white)">What Our Clients Say</h2>
+      <p style="color: rgba(255,255,255,0.8)">Trusted by hundreds of societies and businesses across India</p>
+    </div>
+    
+    <div class="testimonial-slider">
+      <div class="testimonial">
+        <div class="testimonial-text">
+          QR PASS has transformed how we collect maintenance fees. Payments are now received on time with zero follow-ups needed. The automated receipts and dashboard make accounting so much simpler.
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rahul Sharma" class="author-img">
+          <div class="author-info">
+            <h4>Rahul Sharma</h4>
+            <p>Secretary, Green Valley Society</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="container">
+  <div class="section-title">
+    <h2>Get In Touch</h2>
+    <p>Ready to simplify your payment collections? Contact us today</p>
+  </div>
+  
+  <div class="contact-container">
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-icon">
+          <i class="fas fa-phone-alt"></i>
+        </div>
+        <div class="contact-details">
+          <h3>Phone</h3>
+          <a href="tel:+919158058999">+91 9158058999</a>
+        </div>
+      </div>
+      
+      <div class="contact-item">
+        <div class="contact-icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <div class="contact-details">
+          <h3>Email</h3>
+          <a href="mailto:info@qrpass.in">info@qrpass.in</a>
+        </div>
+      </div>
+      
+      <div class="contact-item">
+        <div class="contact-icon">
+          <i class="fab fa-whatsapp"></i>
+        </div>
+        <div class="contact-details">
+          <h3>WhatsApp</h3>
+          <a href="https://wa.me/919158058999" target="_blank">Chat with us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>QR PASS</h3>
+        <p>Simplifying digital payments for societies, schools, and businesses across India with secure, efficient solutions.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#features">Services</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Legal</h3>
+        <ul class="footer-links">
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Refund Policy</a></li>
+          <li><a href="#">Shipping Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 QR PASS. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/919158058999" target="_blank" class="whatsapp-float">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+  // Simple testimonial slider (would be enhanced with proper JS in production)
+  let currentTestimonial = 0;
+  const testimonials = [
+    {
+      text: "QR PASS has transformed how we collect maintenance fees. Payments are now received on time with zero follow-ups needed. The automated receipts and dashboard make accounting so much simpler.",
+      name: "Rahul Sharma",
+      role: "Secretary, Green Valley Society",
+      img: "https://randomuser.me/api/portraits/men/32.jpg"
+    },
+    {
+      text: "Our school fee collection process is now 90% more efficient thanks to QR PASS. Parents appreciate the convenience, and our office staff save hours of manual work each week.",
+      name: "Priya Patel",
+      role: "Principal, Sunshine International School",
+      img: "https://randomuser.me/api/portraits/women/44.jpg"
+    },
+    {
+      text: "For our annual cultural festival, QR PASS handled over 5,000 ticket sales seamlessly. The QR code validation at entry was smooth and eliminated all counterfeit tickets.",
+      name: "Arjun Mehta",
+      role: "Event Coordinator, City Cultural Forum",
+      img: "https://randomuser.me/api/portraits/men/67.jpg"
+    }
+  ];
+  
+  function changeTestimonial() {
+    currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+    const testimonial = testimonials[currentTestimonial];
+    document.querySelector('.testimonial-text').textContent = testimonial.text;
+    document.querySelector('.author-img').src = testimonial.img;
+    document.querySelector('.author-img').alt = testimonial.name;
+    document.querySelector('.author-info h4').textContent = testimonial.name;
+    document.querySelector('.author-info p').textContent = testimonial.role;
+  }
+  
+  // Change testimonial every 5 seconds
+  setInterval(changeTestimonial, 5000);
+  
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
