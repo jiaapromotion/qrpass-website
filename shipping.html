@@ -3,33 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <title>Shipping Policy - QR PASS</title>
-  <!-- Same CSS as privacy.html -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f8f9fa;
+      margin: 0;
+      padding: 20px;
+      color: #212529;
+    }
+    .back-button {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 10px 20px;
+      background: #4361ee;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    .back-button:hover {
+      background: #3a56d4;
+    }
+    h1 {
+      color: #4361ee;
+    }
+  </style>
 </head>
 <body>
-  <div class="back-button-container">
-    <a href="index.html" class="back-button">
-      <i class="fas fa-arrow-left"></i> Back to Home
-    </a>
-  </div>
 
-  <div class="container">
-    <h1>Shipping Policy</h1>
-    <p>Effective: [Date]</p>
-    
-    <h2>1. Digital Delivery</h2>
-    <p>All QR PASS services are delivered digitally...</p>
-    
-    <h2>2. Access Information</h2>
-    <p>Service details are sent via email/WhatsApp post-payment...</p>
-    
-    <h2>3. Delivery Issues</h2>
-    <p>Contact support if you don't receive service details...</p>
-  </div>
+<a href="index.html" class="back-button">← Back to Home</a>
 
-  <div class="close-button">
-    <button onclick="window.history.back()">
-      <i class="fas fa-times"></i> Close
-    </button>
-  </div>
+<h1>Shipping Policy</h1>
+<p>All QR PASS services are delivered digitally. Confirmation details and service links are shared via email or WhatsApp upon successful payment. If you do not receive your service details, please contact support.</p>
+
 </body>
 </html>
