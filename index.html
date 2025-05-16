@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>QR PASS - Smart Digital Payment Solutions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Transform your payment collections with QR PASS - The ultimate solution for societies, schools, events, and businesses across India.">
+  <meta name="description" content="Secure digital payments for societies, schools, events, and businesses. Instant payment processing with bank-grade security.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
   <style>
@@ -30,122 +30,138 @@
       line-height: 1.7;
     }
 
-    header {
+    /* Hero Section */
+    .hero {
       background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
       color: var(--white);
-      padding: 4rem 1rem 6rem;
+      padding: 6rem 1rem 8rem;
       text-align: center;
       position: relative;
       overflow: hidden;
     }
 
-    header::after {
-      content: '';
-      position: absolute;
-      bottom: -50px;
-      left: 0;
-      width: 100%;
-      height: 100px;
-      background: var(--background-color);
-      clip-path: ellipse(75% 100% at center top);
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
     }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1.5rem;
       font-weight: 700;
     }
 
-    h2 {
-      font-size: 2rem;
-      color: var(--primary-color);
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
       margin-bottom: 2rem;
+    }
+
+    .hero-image {
+      width: 100%;
+      max-width: 800px;
+      margin: -4rem auto 0;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
       position: relative;
-      display: inline-block;
+      z-index: 2;
     }
 
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background: var(--accent-color);
-    }
-
-    section {
-      padding: 4rem 1.25rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .services-grid, .steps-grid {
+    /* Features Grid */
+    .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
-      margin-top: 2rem;
+      padding: 4rem 1rem;
     }
 
-    .service-card, .step-card {
+    .feature-card {
       background: var(--white);
       padding: 2rem;
       border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-      transition: var(--transition);
       text-align: center;
+      transition: var(--transition);
       border: 1px solid rgba(0,0,0,0.05);
     }
 
-    .service-card:hover, .step-card:hover {
+    .feature-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
     }
 
-    .service-icon {
-      font-size: 2.5rem;
-      color: var(--primary-color);
-      margin-bottom: 1rem;
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
     }
 
-    .contact-section {
-      background: var(--dark-bg);
+    .feature-icon i {
+      font-size: 2rem;
       color: var(--white);
-      border-radius: var(--border-radius);
-      padding: 3rem 2rem;
-      text-align: center;
     }
 
-    .contact-info {
+    /* How It Works */
+    .steps-section {
+      background: var(--white);
+      padding: 4rem 1rem;
+    }
+
+    .steps-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
-      margin-top: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    .contact-item {
-      background: rgba(255,255,255,0.1);
-      padding: 1.5rem;
+    .step-card {
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .step-number {
+      width: 50px;
+      height: 50px;
+      background: var(--primary-color);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-weight: 600;
+    }
+
+    /* Security Badge */
+    .security-badge {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(99, 102, 241, 0.05);
       border-radius: var(--border-radius);
-      transition: var(--transition);
+      margin: 2rem auto;
+      max-width: 800px;
     }
 
-    .contact-item:hover {
-      background: rgba(255,255,255,0.15);
-    }
-
+    /* Footer */
     footer {
       background: var(--dark-bg);
       color: var(--white);
-      padding: 3rem 1rem;
+      padding: 4rem 1rem;
     }
 
     .footer-content {
       max-width: 1200px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
     }
 
@@ -190,98 +206,84 @@
       transition: var(--transition);
     }
 
-    .whatsapp-float i {
-      font-size: 28px;
-      color: var(--white);
-    }
-
     @media (max-width: 768px) {
-      h1 { font-size: 2rem; }
-      h2 { font-size: 1.75rem; }
-      section { padding: 3rem 1rem; }
-      
-      .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>QR PASS</h1>
-  <p>Next-Gen Digital Payment Solutions</p>
-</header>
-
-<section>
-  <h2>Our Services</h2>
-  <div class="services-grid">
-    <div class="service-card">
-      <i class="fas fa-building service-icon"></i>
-      <h3>Society Maintenance</h3>
-      <p>Automated collection system with instant receipts and digital audit trails</p>
-    </div>
-    <div class="service-card">
-      <i class="fas fa-school service-icon"></i>
-      <h3>School Payments</h3>
-      <p>Secure fee collection with automated reminders and payment tracking</p>
-    </div>
-    <div class="service-card">
-      <i class="fas fa-ticket-alt service-icon"></i>
-      <h3>Event Ticketing</h3>
-      <p>End-to-end digital ticketing solution with QR code validation</p>
-    </div>
-    <div class="service-card">
-      <i class="fas fa-hotel service-icon"></i>
-      <h3>Hotel Bookings</h3>
-      <p>Integrated booking system with instant confirmation and payments</p>
-    </div>
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Secure Digital Payments Made Simple</h1>
+    <p>Transform your payment collections with India's most trusted QR payment solution</p>
+    <img src="https://via.placeholder.com/800x400.png?text=Payment+Dashboard+Preview" alt="QR PASS Interface" class="hero-image">
   </div>
 </section>
 
-<section>
-  <h2>How It Works</h2>
+<!-- Features Grid -->
+<section class="features-grid">
+  <div class="feature-card">
+    <div class="feature-icon">
+      <i class="fas fa-shield-alt"></i>
+    </div>
+    <h3>Bank-Grade Security</h3>
+    <p>256-bit encryption and PCI DSS compliant transactions</p>
+  </div>
+  <div class="feature-card">
+    <div class="feature-icon">
+      <i class="fas fa-bolt"></i>
+    </div>
+    <h3>Instant Processing</h3>
+    <p>Real-time payment notifications and confirmations</p>
+  </div>
+  <div class="feature-card">
+    <div class="feature-icon">
+      <i class="fas fa-rupee-sign"></i>
+    </div>
+    <h3>Zero Setup Cost</h3>
+    <p>Start accepting payments immediately with no hidden fees</p>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="steps-section">
   <div class="steps-grid">
     <div class="step-card">
-      <h3>1. Create Payment Link</h3>
-      <p>Generate unique QR code or payment link in seconds</p>
-      <i class="fas fa-qrcode text-3xl text-primary mt-4"></i>
+      <div class="step-number">1</div>
+      <h3>Create Payment Link</h3>
+      <p>Generate unique QR code in seconds</p>
+      <img src="https://via.placeholder.com/200x150.png?text=QR+Code+Example" alt="QR Code" style="margin-top: 1rem; border-radius: 8px;">
     </div>
     <div class="step-card">
-      <h3>2. Share with Customers</h3>
-      <p>Distribute via WhatsApp, email, SMS, or physical QR display</p>
-      <i class="fas fa-share-alt text-3xl text-primary mt-4"></i>
+      <div class="step-number">2</div>
+      <h3>Share & Collect</h3>
+      <p>Distribute via WhatsApp, SMS, or email</p>
+      <img src="https://via.placeholder.com/200x150.png?text=Share+Options" alt="Sharing Methods" style="margin-top: 1rem; border-radius: 8px;">
     </div>
     <div class="step-card">
-      <h3>3. Receive Payments</h3>
-      <p>Real-time notifications and automated record updates</p>
-      <i class="fas fa-check-circle text-3xl text-primary mt-4"></i>
+      <div class="step-number">3</div>
+      <h3>Track Payments</h3>
+      <p>Real-time dashboard with analytics</p>
+      <img src="https://via.placeholder.com/200x150.png?text=Analytics+Dashboard" alt="Analytics" style="margin-top: 1rem; border-radius: 8px;">
     </div>
   </div>
 </section>
 
-<section class="contact-section">
-  <h2>Contact Us</h2>
-  <div class="contact-info">
-    <div class="contact-item">
-      <i class="fab fa-whatsapp fa-2x"></i>
-      <h3>WhatsApp Support</h3>
-      <p><a href="https://wa.me/919158058999" class="contact-link">+91 91580 58999</a></p>
-    </div>
-    <div class="contact-item">
-      <i class="fas fa-envelope fa-2x"></i>
-      <h3>Email Us</h3>
-      <p><a href="mailto:info@qrpass.in" class="contact-link">info@qrpass.in</a></p>
-    </div>
-    <div class="contact-item">
-      <i class="fas fa-map-marker-alt fa-2x"></i>
-      <h3>Location</h3>
-      <p>Pan-India Operations</p>
-    </div>
+<!-- Security Badge -->
+<div class="security-badge">
+  <h3>Trusted by 5000+ Businesses Across India</h3>
+  <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 1rem;">
+    <img src="https://via.placeholder.com/100x50.png?text=PCI+DSS" alt="PCI DSS" style="height: 40px;">
+    <img src="https://via.placeholder.com/100x50.png?text=SSL+Secure" alt="SSL Secure" style="height: 40px;">
+    <img src="https://via.placeholder.com/100x50.png?text=RBI+Compliant" alt="RBI Compliant" style="height: 40px;">
   </div>
-</section>
+  <p style="margin-top: 1rem;"><a href="security.html" style="color: var(--primary-color);">View our security certifications →</a></p>
+</div>
 
+<!-- Footer -->
 <footer>
   <div class="footer-content">
     <div class="footer-section">
@@ -302,13 +304,15 @@
         <li><a href="about.html">About Us</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="security.html">Security</a></li>
+        <li><a href="careers.html">Careers</a></li>
       </ul>
     </div>
   </div>
 </footer>
 
-<a href="https://wa.me/919158058999" class="whatsapp-float" aria-label="WhatsApp Chat">
-  <i class="fab fa-whatsapp"></i>
+<!-- WhatsApp Float -->
+<a href="https://wa.me/919158058999" class="whatsapp-float" aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp" style="color: white; font-size: 1.5rem;"></i>
 </a>
 
 </body>
