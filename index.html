@@ -1,144 +1,208 @@
-<!-- START OF UPDATED INDEX.HTML FILE -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>QR PASS - Smart Society Payments</title>
+  <title>QR PASS - Smart Digital Payment Solutions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="QR PASS simplifies society maintenance collections, school fees, event ticketing, hotel bookings and stall payments through digital payment links.">
+  <meta name="description" content="Transform your payment collections with QR PASS - The ultimate solution for societies, schools, events, and businesses across India.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
   <style>
     :root {
-      --primary-color: #007bff;
-      --secondary-color: #00d4ff;
-      --background-color: #f4f8fb;
-      --text-color: #333;
-      --white: #fff;
-      --dark-bg: #222;
-      --light-text: #aaa;
-      --whatsapp-green: #25d366;
-      --shadow: 0 2px 5px rgba(0,0,0,0.1);
-      --border-radius: 10px;
+      --primary-color: #2563eb;
+      --secondary-color: #3b82f6;
+      --accent-color: #60a5fa;
+      --background-color: #f8fafc;
+      --text-color: #1e293b;
+      --white: #ffffff;
+      --dark-bg: #0f172a;
+      --success-green: #25d366;
+      --shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+      --border-radius: 12px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
+
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
+      font-family: 'Poppins', sans-serif;
       background: var(--background-color);
       color: var(--text-color);
-      line-height: 1.6;
+      line-height: 1.7;
     }
+
     header {
       background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
       color: var(--white);
-      padding: 2rem 1rem;
+      padding: 4rem 1rem 6rem;
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
-    h1, h2, h3 {
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -50px;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: var(--background-color);
+      clip-path: ellipse(75% 100% at center top);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    h2 {
+      font-size: 2rem;
       color: var(--primary-color);
-      margin-top: 0;
+      margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
     }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--accent-color);
+    }
+
     section {
-      padding: 2.5rem 1.25rem;
-      max-width: 62.5rem;
+      padding: 4rem 1.25rem;
+      max-width: 1200px;
       margin: 0 auto;
     }
-    p {
-      font-size: 1rem;
+
+    .services-grid, .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
     }
-    .services, .how-it-works {
+
+    .service-card, .step-card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      text-align: center;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .service-card:hover, .step-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    }
+
+    .service-icon {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .contact-section {
+      background: var(--dark-bg);
+      color: var(--white);
+      border-radius: var(--border-radius);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .contact-info {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.25rem;
-      margin-top: 1.25rem;
+      gap: 2rem;
+      margin-top: 2rem;
     }
-    .services div, .how-it-works div {
-      background: var(--white);
-      padding: 1.25rem;
+
+    .contact-item {
+      background: rgba(255,255,255,0.1);
+      padding: 1.5rem;
       border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-      transition: transform 0.3s ease;
+      transition: var(--transition);
     }
-    .services div:hover, .how-it-works div:hover {
-      transform: translateY(-5px);
+
+    .contact-item:hover {
+      background: rgba(255,255,255,0.15);
     }
+
     footer {
       background: var(--dark-bg);
-      color: var(--light-text);
-      padding: 1.25rem;
-      text-align: center;
-      font-size: 0.875rem;
-    }
-    footer a {
-      color: var(--secondary-color);
-      text-decoration: none;
-      margin: 0 0.5rem;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
-    .popup {
-      display: none;
-      position: fixed;
-      top: 10%;
-      left: 10%;
-      right: 10%;
-      background: var(--white);
-      padding: 1.25rem;
-      border-radius: var(--border-radius);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      z-index: 9999;
-      max-height: 80vh;
-      overflow-y: auto;
-    }
-    .close-btn {
-      background: #ff4444;
       color: var(--white);
-      padding: 0.3rem 0.6rem;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      float: right;
-      font-weight: bold;
+      padding: 3rem 1rem;
     }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer-section h3 {
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-links a {
+      color: var(--white);
+      text-decoration: none;
+      opacity: 0.8;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+      color: var(--accent-color);
+    }
+
     .whatsapp-float {
       position: fixed;
-      bottom: 1.25rem;
-      right: 1.25rem;
-      background: var(--whatsapp-green);
-      color: var(--white);
-      width: 3.5rem;
-      height: 3.5rem;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--success-green);
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
-      text-align: center;
-      line-height: 3.5rem;
-      font-size: 1.75rem;
-      box-shadow: var(--shadow);
-      z-index: 1000;
-      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: var(--transition);
     }
-    .whatsapp-float:hover {
-      transform: scale(1.1);
+
+    .whatsapp-float i {
+      font-size: 28px;
+      color: var(--white);
     }
-    .contact-link {
-      color: var(--primary-color);
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .contact-link:hover {
-      text-decoration: underline;
-    }
+
     @media (max-width: 768px) {
-      section {
-        padding: 1.5rem 1rem;
-      }
-      .popup {
-        top: 5%;
-        left: 5%;
-        right: 5%;
-        max-height: 90vh;
-      }
-      footer a {
-        display: block;
-        margin: 0.5rem 0;
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.75rem; }
+      section { padding: 3rem 1rem; }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
       }
     }
   </style>
@@ -147,71 +211,105 @@
 
 <header>
   <h1>QR PASS</h1>
-  <p>Smart Payments for Societies, Schools, Events, Hotels & More</p>
+  <p>Next-Gen Digital Payment Solutions</p>
 </header>
 
 <section>
-  <h2>About QR PASS</h2>
-  <p>QR PASS simplifies society maintenance collections, school fees, event ticketing, hotel bookings and stall payments through digital payment links. Instant receipts, transparent record keeping, and hassle-free experience — all at your fingertips.</p>
-</section>
-
-<section class="services">
-  <h2>Services We Offer</h2>
-  <div>
-    <h3>🏢 Society Maintenance</h3>
-    <p>Automated collection of maintenance fees with instant receipts and digital records.</p>
-  </div>
-  <div>
-    <h3>🏫 School Fee Payments</h3>
-    <p>Secure and convenient fee collection for educational institutions.</p>
-  </div>
-  <div>
-    <h3>🎟️ Event Tickets</h3>
-    <p>Digital ticketing solution for conferences, shows, and events.</p>
-  </div>
-  <div>
-    <h3>🏨 Hotel & Facility Booking</h3>
-    <p>Streamlined booking and payment system for hotels and stalls.</p>
-  </div>
-</section>
-
-<section class="how-it-works">
-  <h2>How It Works</h2>
-  <div>
-    <h3>1️⃣ Create Payment Link</h3>
-    <p>Generate a unique QR code or payment link for your service.</p>
-  </div>
-  <div>
-    <h3>2️⃣ Share with Customers</h3>
-    <p>Send the link via WhatsApp, email, or display the QR code.</p>
-  </div>
-  <div>
-    <h3>3️⃣ Receive Payments</h3>
-    <p>Get instant notifications and automatic record updates.</p>
+  <h2>Our Services</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <i class="fas fa-building service-icon"></i>
+      <h3>Society Maintenance</h3>
+      <p>Automated collection system with instant receipts and digital audit trails</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-school service-icon"></i>
+      <h3>School Payments</h3>
+      <p>Secure fee collection with automated reminders and payment tracking</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-ticket-alt service-icon"></i>
+      <h3>Event Ticketing</h3>
+      <p>End-to-end digital ticketing solution with QR code validation</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-hotel service-icon"></i>
+      <h3>Hotel Bookings</h3>
+      <p>Integrated booking system with instant confirmation and payments</p>
+    </div>
   </div>
 </section>
 
 <section>
+  <h2>How It Works</h2>
+  <div class="steps-grid">
+    <div class="step-card">
+      <h3>1. Create Payment Link</h3>
+      <p>Generate unique QR code or payment link in seconds</p>
+      <i class="fas fa-qrcode text-3xl text-primary mt-4"></i>
+    </div>
+    <div class="step-card">
+      <h3>2. Share with Customers</h3>
+      <p>Distribute via WhatsApp, email, SMS, or physical QR display</p>
+      <i class="fas fa-share-alt text-3xl text-primary mt-4"></i>
+    </div>
+    <div class="step-card">
+      <h3>3. Receive Payments</h3>
+      <p>Real-time notifications and automated record updates</p>
+      <i class="fas fa-check-circle text-3xl text-primary mt-4"></i>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section">
   <h2>Contact Us</h2>
-  <p>📞 WhatsApp Support: <a class="contact-link" href="https://wa.me/919158058999" target="_blank" rel="noopener">+91 9158058999</a></p>
-  <p>📧 Email: <a class="contact-link" href="mailto:info@qrpass.in">info@qrpass.in</a></p>
-  <p>📍 Operating across India</p>
+  <div class="contact-info">
+    <div class="contact-item">
+      <i class="fab fa-whatsapp fa-2x"></i>
+      <h3>WhatsApp Support</h3>
+      <p><a href="https://wa.me/919158058999" class="contact-link">+91 91580 58999</a></p>
+    </div>
+    <div class="contact-item">
+      <i class="fas fa-envelope fa-2x"></i>
+      <h3>Email Us</h3>
+      <p><a href="mailto:info@qrpass.in" class="contact-link">info@qrpass.in</a></p>
+    </div>
+    <div class="contact-item">
+      <i class="fas fa-map-marker-alt fa-2x"></i>
+      <h3>Location</h3>
+      <p>Pan-India Operations</p>
+    </div>
+  </div>
 </section>
 
 <footer>
-  <p>© 2025 QR PASS. All rights reserved.</p>
-  <div>
-    <a href="#" onclick="openPopup('about')">About Us</a>
-    <a href="terms.html">Terms & Conditions</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="refund.html">Refund Policy</a>
-    <a href="shipping.html">Shipping Policy</a>
-    <a href="contact.html">Contact Us</a>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>QR PASS</h3>
+      <p>Simplifying Digital Payments</p>
+    </div>
+    <div class="footer-section">
+      <h3>Legal</h3>
+      <ul class="footer-links">
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="refund.html">Refund Policy</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Company</h3>
+      <ul class="footer-links">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="security.html">Security</a></li>
+      </ul>
+    </div>
   </div>
 </footer>
 
-<a class="whatsapp-float" href="https://wa.me/919158058999" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+<a href="https://wa.me/919158058999" class="whatsapp-float" aria-label="WhatsApp Chat">
+  <i class="fab fa-whatsapp"></i>
+</a>
 
 </body>
 </html>
-<!-- END OF UPDATED FILE -->

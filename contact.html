@@ -1,52 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Contact Us - QR PASS</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
   <style>
+    :root {
+      --primary-color: #2563eb;
+      --secondary-color: #3b82f6;
+      --accent-color: #60a5fa;
+      --background-color: #f8fafc;
+      --text-color: #1e293b;
+      --white: #ffffff;
+      --success-green: #25d366;
+      --shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+      --border-radius: 12px;
+    }
+
     body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background-color: #f4f8fb;
-      color: #333;
-      padding: 2rem;
-      line-height: 1.6;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.7;
     }
-    .container {
-      max-width: 600px;
-      margin: 0 auto;
-      background: #fff;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+    .contact-container {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 3rem 2rem;
+      background: var(--white);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
     }
+
     h1 {
-      color: #007bff;
+      color: var(--primary-color);
+      text-align: center;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--accent-color);
+    }
+
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .contact-item {
+      text-align: center;
+      padding: 1.5rem;
+      border-radius: var(--border-radius);
+      background: rgba(99, 102, 241, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .contact-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .contact-icon {
+      font-size: 2rem;
+      color: var(--primary-color);
       margin-bottom: 1rem;
     }
-    p {
-      margin-bottom: 0.75rem;
-    }
-    a {
-      color: #007bff;
+
+    .back-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary-color);
       text-decoration: none;
+      margin-top: 2rem;
+      transition: opacity 0.3s ease;
     }
-    a:hover {
-      text-decoration: underline;
+
+    .back-home:hover {
+      opacity: 0.8;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--success-green);
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Contact Us</h1>
-    <p><strong>Customer Support:</strong></p>
-    <p>📞 Phone: <a href="tel:+919158058999">+91 9158058999</a></p>
-    <p>📧 Email: <a href="mailto:info@qrpass.in">info@qrpass.in</a></p>
-    <p>📍 Address: Jiaa Promotion, Pune, Maharashtra, India</p>
+  <div class="contact-container">
+    <h1>Contact QR PASS</h1>
+    
+    <div class="contact-info">
+      <div class="contact-item">
+        <i class="fas fa-phone-alt contact-icon"></i>
+        <h3>Phone Support</h3>
+        <p><a href="tel:+919158058999" style="color: var(--primary-color);">+91 91580 58999</a></p>
+      </div>
+      
+      <div class="contact-item">
+        <i class="fas fa-envelope contact-icon"></i>
+        <h3>Email Address</h3>
+        <p><a href="mailto:info@qrpass.in" style="color: var(--primary-color);">info@qrpass.in</a></p>
+      </div>
+      
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt contact-icon"></i>
+        <h3>Office Address</h3>
+        <p>Jiaa Promotion<br>Pune, Maharashtra</p>
+      </div>
+    </div>
 
-    <p><strong>Business Hours:</strong><br>Monday–Saturday: 9:00 AM to 6:00 PM</p>
+    <div class="business-hours">
+      <h3>Business Hours</h3>
+      <p>Monday–Saturday: 9:00 AM to 6:00 PM</p>
+      <p>Sunday: Closed</p>
+    </div>
 
-    <p><a href="index.html">← Back to Home</a></p>
+    <a href="index.html" class="back-home">
+      <i class="fas fa-arrow-left"></i> Return to Homepage
+    </a>
   </div>
+
+  <a href="https://wa.me/919158058999" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp" style="color: white; font-size: 1.5rem;"></i>
+  </a>
 </body>
 </html>

@@ -4,129 +4,76 @@
   <meta charset="UTF-8">
   <title>Terms of Service - QR PASS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
   <style>
     :root {
-      --primary: #4361ee;
-      --primary-dark: #3a56d4;
-      --secondary: #3f37c9;
-      --accent: #4895ef;
-      --light: #f8f9fa;
-      --dark: #212529;
-      --success: #4cc9f0;
+      --primary-color: #2563eb;
+      --secondary-color: #3b82f6;
+      --accent-color: #60a5fa;
+      --background-color: #f8fafc;
+      --text-color: #1e293b;
       --white: #ffffff;
-      --gray: #6c757d;
-      --light-gray: #e9ecef;
-      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      --transition: all 0.3s ease;
-      --border-radius: 12px;
     }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+
     body {
+      margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: var(--light);
-      color: var(--dark);
-      line-height: 1.6;
+      background: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.7;
     }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 40px 20px;
+
+    .terms-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 3rem 2rem;
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
     }
-    .back-button-container {
-      background: var(--primary);
-      padding: 20px;
-    }
-    .back-button {
-      color: var(--white);
-      text-decoration: none;
-      font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: var(--transition);
-    }
-    .back-button:hover {
-      color: var(--success);
-      transform: translateX(-5px);
-    }
+
     h1 {
-      color: var(--primary);
+      color: var(--primary-color);
+      text-align: center;
       margin-bottom: 2rem;
     }
+
     h2 {
-      color: var(--primary-dark);
-      margin: 1.5rem 0 1rem;
+      color: var(--secondary-color);
+      margin: 2rem 0 1rem;
+      font-size: 1.3rem;
     }
-    p {
-      margin-bottom: 1rem;
-      color: var(--gray);
-    }
-    .close-button {
-      position: fixed;
-      bottom: 30px;
-      left: 30px;
-      z-index: 100;
-    }
-    .close-button button {
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      border-radius: 50px;
-      cursor: pointer;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-      display: flex;
+
+    .back-home {
+      display: inline-flex;
       align-items: center;
-      gap: 8px;
-    }
-    .close-button button:hover {
-      background: var(--primary-dark);
-      transform: scale(1.05);
+      gap: 0.5rem;
+      color: var(--primary-color);
+      text-decoration: none;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
+  <div class="terms-container">
+    <h1>Terms of Service</h1>
+    
+    <h2>1. Acceptance of Terms</h2>
+    <p>By using QR PASS services, you agree to comply with these terms...</p>
 
-<div class="back-button-container">
-  <a href="index.html" class="back-button">
-    <i class="fas fa-arrow-left"></i> Back to Home
-  </a>
-</div>
+    <h2>2. Service Description</h2>
+    <p>Digital payment solutions for societies, schools, events, and businesses...</p>
 
-<div class="container">
-  <h1>Terms of Service</h1>
-  <p>Last Updated: [Date]</p>
+    <h2>3. User Responsibilities</h2>
+    <p>Users must provide accurate information and maintain account security...</p>
 
-  <h2>1. Acceptance of Terms</h2>
-  <p>By accessing and using QR PASS services, you agree to be bound by these Terms and Conditions.</p>
+    <h2>4. Payment Processing</h2>
+    <p>All transactions are final subject to our Refund Policy...</p>
 
-  <h2>2. Services</h2>
-  <p>QR PASS offers digital payment solutions for societies, schools, events, hotels, and other businesses.</p>
-
-  <h2>3. Payments</h2>
-  <p>All payments processed through QR PASS are final and subject to our Refund Policy. Duplicate transactions may be refunded upon verification.</p>
-
-  <h2>4. Limitation of Liability</h2>
-  <p>QR PASS is not liable for any indirect, incidental, or consequential damages arising from the use of its services.</p>
-
-  <h2>5. Privacy</h2>
-  <p>Your privacy is important to us. Please review our Privacy Policy to understand how we handle your information.</p>
-
-  <h2>6. Changes to Terms</h2>
-  <p>QR PASS reserves the right to modify these Terms at any time. Updated terms will be posted on this page.</p>
-</div>
-
-<div class="close-button">
-  <button onclick="window.history.back()">
-    <i class="fas fa-times"></i> Close
-  </button>
-</div>
-
+    <a href="index.html" class="back-home">
+      <i class="fas fa-arrow-left"></i> Return to Homepage
+    </a>
+  </div>
 </body>
 </html>

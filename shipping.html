@@ -3,39 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <title>Shipping Policy - QR PASS</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
   <style>
+    :root {
+      --primary-color: #2563eb;
+      --secondary-color: #3b82f6;
+      --accent-color: #60a5fa;
+      --background-color: #f8fafc;
+      --text-color: #1e293b;
+      --white: #ffffff;
+    }
+
     body {
-      font-family: 'Poppins', sans-serif;
-      background: #f8f9fa;
       margin: 0;
-      padding: 20px;
-      color: #212529;
+      font-family: 'Poppins', sans-serif;
+      background: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.7;
     }
-    .back-button {
-      display: inline-block;
-      margin-bottom: 20px;
-      padding: 10px 20px;
-      background: #4361ee;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: 0.3s;
+
+    .shipping-container {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 3rem 2rem;
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
     }
-    .back-button:hover {
-      background: #3a56d4;
-    }
+
     h1 {
-      color: #4361ee;
+      color: var(--primary-color);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .delivery-process {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .process-step {
+      text-align: center;
+      padding: 1.5rem;
+      border-radius: 8px;
+      background: rgba(99, 102, 241, 0.05);
+    }
+
+    .back-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary-color);
+      text-decoration: none;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
+  <div class="shipping-container">
+    <h1>Digital Delivery Policy</h1>
+    
+    <div class="delivery-process">
+      <div class="process-step">
+        <i class="fas fa-qrcode fa-2x" style="color: var(--primary-color); margin-bottom: 1rem;"></i>
+        <h3>Instant Generation</h3>
+        <p>QR codes created immediately after payment confirmation</p>
+      </div>
+      
+      <div class="process-step">
+        <i class="fas fa-envelope fa-2x" style="color: var(--primary-color); margin-bottom: 1rem;"></i>
+        <h3>Digital Delivery</h3>
+        <p>Service details sent via email and WhatsApp</p>
+      </div>
+    </div>
 
-<a href="index.html" class="back-button">← Back to Home</a>
-
-<h1>Shipping Policy</h1>
-<p>All QR PASS services are delivered digitally. Confirmation details and service links are shared via email or WhatsApp upon successful payment. If you do not receive your service details, please contact support.</p>
-
+    <a href="index.html" class="back-home">
+      <i class="fas fa-arrow-left"></i> Return to Homepage
+    </a>
+  </div>
 </body>
 </html>

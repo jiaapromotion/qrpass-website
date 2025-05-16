@@ -3,39 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <title>Refund Policy - QR PASS</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
   <style>
+    :root {
+      --primary-color: #2563eb;
+      --secondary-color: #3b82f6;
+      --accent-color: #60a5fa;
+      --background-color: #f8fafc;
+      --text-color: #1e293b;
+      --white: #ffffff;
+    }
+
     body {
-      font-family: 'Poppins', sans-serif;
-      background: #f8f9fa;
       margin: 0;
-      padding: 20px;
-      color: #212529;
+      font-family: 'Poppins', sans-serif;
+      background: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.7;
     }
-    .back-button {
-      display: inline-block;
-      margin-bottom: 20px;
-      padding: 10px 20px;
-      background: #4361ee;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: 0.3s;
+
+    .refund-container {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 3rem 2rem;
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
     }
-    .back-button:hover {
-      background: #3a56d4;
-    }
+
     h1 {
-      color: #4361ee;
+      color: var(--primary-color);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .policy-points {
+      border-left: 4px solid var(--accent-color);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .policy-points li {
+      margin-bottom: 1rem;
+      padding-left: 1rem;
+    }
+
+    .back-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary-color);
+      text-decoration: none;
+      margin-top: 2rem;
+      transition: opacity 0.3s ease;
     }
   </style>
 </head>
 <body>
+  <div class="refund-container">
+    <h1>Refund Policy</h1>
+    
+    <div class="policy-points">
+      <ul>
+        <li>Refunds processed within 7-10 business days for verified duplicate payments</li>
+        <li>No refunds after service utilization</li>
+        <li>Processing fee of ₹50 applicable on refunds</li>
+        <li>Refund requests must be submitted within 14 days of transaction</li>
+      </ul>
+    </div>
 
-<a href="index.html" class="back-button">← Back to Home</a>
-
-<h1>Refund Policy</h1>
-<p>Refunds will only be issued in cases where duplicate payments have occurred. No refunds will be entertained once the service or event is successfully availed. Refunds, if approved, will be processed within 7–10 business days.</p>
-
+    <a href="index.html" class="back-home">
+      <i class="fas fa-arrow-left"></i> Return to Homepage
+    </a>
+  </div>
 </body>
 </html>
