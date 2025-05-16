@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>QR PASS - Smart Digital Payment Solutions</title>
+  <title>QR PASS - Secure Digital Payment Solutions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Secure digital payments for societies, schools, events, and businesses. Instant payment processing with bank-grade security.">
+  <meta name="description" content="India's most trusted QR payment solution with ₹ INR support. PCI DSS compliant transactions with instant processing.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
   <style>
@@ -22,12 +22,18 @@
       --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Poppins', sans-serif;
       background: var(--background-color);
       color: var(--text-color);
       line-height: 1.7;
+      overflow-x: hidden;
     }
 
     /* Hero Section */
@@ -37,20 +43,13 @@
       padding: 6rem 1rem 8rem;
       text-align: center;
       position: relative;
-      overflow: hidden;
-    }
-
-    .hero-content {
-      max-width: 800px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
     }
 
     .hero h1 {
       font-size: 2.8rem;
       margin-bottom: 1.5rem;
       font-weight: 700;
+      line-height: 1.2;
     }
 
     .hero p {
@@ -59,22 +58,49 @@
       margin-bottom: 2rem;
     }
 
-    .hero-image {
-      width: 100%;
+    /* Corrected Slideshow Styles */
+    .slideshow-container {
       max-width: 800px;
-      margin: -4rem auto 0;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
+      margin: 2rem auto 0;
       position: relative;
-      z-index: 2;
     }
 
-    /* Features Grid */
+    .slideshow {
+      position: relative;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      width: 100%;
+      padding-top: 50%; /* 2:1 Aspect Ratio */
+      box-shadow: var(--shadow);
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    /* Features Section */
+    .features {
+      padding: 4rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
-      padding: 4rem 1rem;
+      margin-top: 2rem;
     }
 
     .feature-card {
@@ -83,32 +109,26 @@
       border-radius: var(--border-radius);
       text-align: center;
       transition: var(--transition);
-      border: 1px solid rgba(0,0,0,0.05);
+      box-shadow: var(--shadow);
     }
 
     .feature-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
     }
 
     .feature-icon {
-      width: 80px;
-      height: 80px;
-      background: var(--primary-color);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1.5rem;
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
     }
 
-    .feature-icon i {
-      font-size: 2rem;
-      color: var(--white);
+    .inr-symbol {
+      font-family: sans-serif;
+      margin-right: 3px;
     }
 
-    /* How It Works */
-    .steps-section {
+    /* Workflow Section */
+    .workflow {
       background: var(--white);
       padding: 4rem 1rem;
     }
@@ -122,9 +142,8 @@
     }
 
     .step-card {
-      padding: 2rem;
       text-align: center;
-      position: relative;
+      padding: 2rem;
     }
 
     .step-number {
@@ -140,14 +159,18 @@
       font-weight: 600;
     }
 
-    /* Security Badge */
-    .security-badge {
+    /* Security Section */
+    .security {
+      padding: 4rem 1rem;
       text-align: center;
-      padding: 2rem;
-      background: rgba(99, 102, 241, 0.05);
-      border-radius: var(--border-radius);
-      margin: 2rem auto;
-      max-width: 800px;
+    }
+
+    .badges {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
     }
 
     /* Footer */
@@ -155,6 +178,7 @@
       background: var(--dark-bg);
       color: var(--white);
       padding: 4rem 1rem;
+      margin-top: 4rem;
     }
 
     .footer-content {
@@ -165,18 +189,9 @@
       gap: 2rem;
     }
 
-    .footer-section h3 {
-      color: var(--white);
-      margin-bottom: 1.5rem;
-    }
-
     .footer-links {
       list-style: none;
       padding: 0;
-    }
-
-    .footer-links li {
-      margin-bottom: 0.75rem;
     }
 
     .footer-links a {
@@ -191,6 +206,7 @@
       color: var(--accent-color);
     }
 
+    /* WhatsApp Float */
     .whatsapp-float {
       position: fixed;
       bottom: 2rem;
@@ -203,12 +219,13 @@
       align-items: center;
       justify-content: center;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      transition: var(--transition);
+      z-index: 1000;
     }
 
     @media (max-width: 768px) {
       .hero h1 { font-size: 2rem; }
       .hero p { font-size: 1rem; }
+      .steps-grid { gap: 1rem; }
     }
   </style>
 </head>
@@ -216,104 +233,131 @@
 
 <!-- Hero Section -->
 <section class="hero">
-  <div class="hero-content">
-    <h1>Secure Digital Payments Made Simple</h1>
-    <p>Transform your payment collections with India's most trusted QR payment solution</p>
-    <img src="https://via.placeholder.com/800x400.png?text=Payment+Dashboard+Preview" alt="QR PASS Interface" class="hero-image">
+  <h1>Secure Digital Payments Made Simple</h1>
+  <p>Trusted by 5,000+ Businesses Across India</p>
+  
+  <div class="slideshow-container">
+    <div class="slideshow">
+      <img src="./images/hero1.jpg" class="slide active" alt="Payment Interface" loading="lazy">
+      <img src="./images/hero2.jpg" class="slide" alt="Mobile Payment" loading="lazy">
+      <img src="./images/hero3.jpg" class="slide" alt="QR Code Scanning" loading="lazy">
+      <img src="./images/hero4.jpg" class="slide" alt="Secure Transactions" loading="lazy">
+      <img src="./images/hero5.jpg" class="slide" alt="Payment Analytics" loading="lazy">
+      <img src="./images/hero6.jpg" class="slide" alt="Multi-Device Support" loading="lazy">
+      <img src="./images/hero7.jpg" class="slide" alt="Instant Notifications" loading="lazy">
+      <img src="./images/hero8.jpg" class="slide" alt="Business Dashboard" loading="lazy">
+      <img src="./images/hero9.jpg" class="slide" alt="Payment History" loading="lazy">
+      <img src="./images/hero10.jpg" class="slide" alt="Bank Integration" loading="lazy">
+    </div>
   </div>
 </section>
 
-<!-- Features Grid -->
-<section class="features-grid">
-  <div class="feature-card">
-    <div class="feature-icon">
-      <i class="fas fa-shield-alt"></i>
+<!-- Features -->
+<section class="features">
+  <div class="features-grid">
+    <div class="feature-card">
+      <i class="fas fa-shield-alt feature-icon"></i>
+      <h3>Bank-Grade Security</h3>
+      <p>256-bit encryption & PCI DSS compliant transactions</p>
     </div>
-    <h3>Bank-Grade Security</h3>
-    <p>256-bit encryption and PCI DSS compliant transactions</p>
-  </div>
-  <div class="feature-card">
-    <div class="feature-icon">
-      <i class="fas fa-bolt"></i>
+    
+    <div class="feature-card">
+      <i class="fas fa-bolt feature-icon"></i>
+      <h3>Instant Processing</h3>
+      <p>Real-time payment notifications & confirmations</p>
     </div>
-    <h3>Instant Processing</h3>
-    <p>Real-time payment notifications and confirmations</p>
-  </div>
-  <div class="feature-card">
-    <div class="feature-icon">
-      <i class="fas fa-rupee-sign"></i>
+    
+    <div class="feature-card">
+      <i class="fas fa-rupee-sign feature-icon"></i>
+      <h3>Zero Setup Cost</h3>
+      <p>Start accepting <span class="inr-symbol">₹</span>INR payments immediately</p>
     </div>
-    <h3>Zero Setup Cost</h3>
-    <p>Start accepting payments immediately with no hidden fees</p>
   </div>
 </section>
 
-<!-- How It Works -->
-<section class="steps-section">
+<!-- Workflow -->
+<section class="workflow">
   <div class="steps-grid">
     <div class="step-card">
       <div class="step-number">1</div>
       <h3>Create Payment Link</h3>
       <p>Generate unique QR code in seconds</p>
-      <img src="https://via.placeholder.com/200x150.png?text=QR+Code+Example" alt="QR Code" style="margin-top: 1rem; border-radius: 8px;">
+      <img src="./images/qr-code-step.png" alt="QR code generation" class="step-image" width="200" height="150" loading="lazy">
     </div>
+    
     <div class="step-card">
       <div class="step-number">2</div>
       <h3>Share & Collect</h3>
       <p>Distribute via WhatsApp, SMS, or email</p>
-      <img src="https://via.placeholder.com/200x150.png?text=Share+Options" alt="Sharing Methods" style="margin-top: 1rem; border-radius: 8px;">
+      <img src="./images/share-methods.png" alt="Payment sharing methods" class="step-image" width="200" height="150" loading="lazy">
     </div>
+    
     <div class="step-card">
       <div class="step-number">3</div>
       <h3>Track Payments</h3>
       <p>Real-time dashboard with analytics</p>
-      <img src="https://via.placeholder.com/200x150.png?text=Analytics+Dashboard" alt="Analytics" style="margin-top: 1rem; border-radius: 8px;">
+      <img src="./images/analytics-dashboard.png" alt="Payment analytics" class="step-image" width="200" height="150" loading="lazy">
     </div>
   </div>
 </section>
 
-<!-- Security Badge -->
-<div class="security-badge">
-  <h3>Trusted by 5000+ Businesses Across India</h3>
-  <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 1rem;">
-    <img src="https://via.placeholder.com/100x50.png?text=PCI+DSS" alt="PCI DSS" style="height: 40px;">
-    <img src="https://via.placeholder.com/100x50.png?text=SSL+Secure" alt="SSL Secure" style="height: 40px;">
-    <img src="https://via.placeholder.com/100x50.png?text=RBI+Compliant" alt="RBI Compliant" style="height: 40px;">
+<!-- Security -->
+<section class="security">
+  <h2>Trusted & Certified</h2>
+  <div class="badges">
+    <img src="./images/pci-dss-certified.png" alt="PCI DSS Certification" width="120" height="60" loading="lazy">
+    <img src="./images/ssl-secure.png" alt="SSL Secure Certification" width="120" height="60" loading="lazy">
   </div>
-  <p style="margin-top: 1rem;"><a href="security.html" style="color: var(--primary-color);">View our security certifications →</a></p>
-</div>
+  <a href="security.html" class="cta-link">View Security Details →</a>
+</section>
 
 <!-- Footer -->
 <footer>
   <div class="footer-content">
-    <div class="footer-section">
-      <h3>QR PASS</h3>
+    <div>
+      <h4>QR PASS</h4>
       <p>Simplifying Digital Payments</p>
     </div>
-    <div class="footer-section">
-      <h3>Legal</h3>
+    <div>
+      <h4>Legal</h4>
       <ul class="footer-links">
         <li><a href="terms.html">Terms of Service</a></li>
         <li><a href="privacy.html">Privacy Policy</a></li>
         <li><a href="refund.html">Refund Policy</a></li>
       </ul>
     </div>
-    <div class="footer-section">
-      <h3>Company</h3>
+    <div>
+      <h4>Company</h4>
       <ul class="footer-links">
         <li><a href="about.html">About Us</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="security.html">Security</a></li>
-        <li><a href="careers.html">Careers</a></li>
       </ul>
     </div>
   </div>
 </footer>
 
-<!-- WhatsApp Float -->
-<a href="https://wa.me/919158058999" class="whatsapp-float" aria-label="Chat on WhatsApp">
+<!-- WhatsApp Button -->
+<a href="https://wa.me/919158058999" class="whatsapp-float" aria-label="Chat via WhatsApp">
   <i class="fab fa-whatsapp" style="color: white; font-size: 1.5rem;"></i>
 </a>
+
+<script>
+  // Slideshow functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+    
+    function showNextSlide() {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
+
+    setInterval(showNextSlide, 3000);
+    slides[0].classList.add('active');
+  });
+</script>
 
 </body>
 </html>
